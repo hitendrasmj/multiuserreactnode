@@ -1,0 +1,99 @@
+// Create User
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Amit Kumar One",
+    "email": "admin.kumar.one@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "user"
+}
+
+#############################
+//Get all Users
+GET http://localhost:5000/users
+
+#############################
+// Get single User
+GET http://localhost:5000/users/1fe440c9-b5cc-4031-a926-b79719a7cb07
+
+#############################
+// Updated User
+PATCH http://localhost:5000/users/1fe440c9-b5cc-4031-a926-b79719a7cb07
+Content-Type: application/json
+
+{
+    "name": "Hitendra JSR Updated",
+    "email": "hitendra.jsr.updated@gmail.com",
+    "password": "",
+    "confPassword": "",
+    "role": "user"
+}
+
+#############################
+// Deleted User
+DELETE http://localhost:5000/users/c99659d4-1ae5-47d4-8c21-ccc59e156437
+
+#############################
+// Login User for admin user
+POST  http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "hitendra@gmail.com",
+    "password": "123456"
+}
+
+#############################
+// Login User for non admin users
+POST  http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "hitendra.jsr.updated@gmail.com",
+    "password": "123456"
+}
+
+#############################
+//Get Login User Details
+GET http://localhost:5000/me
+
+#############################
+//Logout User
+DELETE http://localhost:5000/logout
+
+####################### Products API ####################
+
+//Get all Products
+GET http://localhost:5000/products
+
+####################### Products API ####################
+
+//Get all Products by UUID
+GET http://localhost:5000/products/f58fbdcb-147a-42c6-9844-9629e445d2f5
+
+
+###################################
+// Create Products
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name": "Product 6",
+    "price": 299
+}
+
+###################################
+// Update Product
+PATCH http://localhost:5000/products/f58fbdcb-147a-42c6-9844-9629e445d2f5
+Content-Type: application/json
+
+{
+    "name": "Product 1",
+    "price": 2992
+}
+
+###################################
+// Delete Product
+DELETE http://localhost:5000/products/65d89f7c-4e72-4b00-8229-b349e48324ab
