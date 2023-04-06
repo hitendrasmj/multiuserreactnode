@@ -4,17 +4,36 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <!-- BEGIN STYLESHEETS FOR ALL PAGES -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
+		<link type="text/css" rel="stylesheet" href="%PUBLIC_URL%/assets/css/theme-default/bootstrap.css?1422792965" />
+		<link type="text/css" rel="stylesheet" href="%PUBLIC_URL%/assets/css/theme-default/materialadmin.css?1425466319" />
+		<link type="text/css" rel="stylesheet" href="%PUBLIC_URL%/assets/css/theme-default/font-awesome.min.css?1422529194" />
+		<link type="text/css" rel="stylesheet" href="%PUBLIC_URL%/assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
+		<!-- END STYLESHEETS FOR ALL PAGES -->
+
+    <!-- BEGIN STYLESHEETS FOR TABLE DESIGN PAGES -->
+    <link type="text/css" rel="stylesheet" href="%PUBLIC_URL%/assets/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989" />
+		<link type="text/css" rel="stylesheet" href="%PUBLIC_URL%/assets/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1423553990" />
+		<link type="text/css" rel="stylesheet" href="%PUBLIC_URL%/assets/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1423553990" />
+    <!-- END STYLESHEETS FOR TABLE DESIGN PAGES -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="%PUBLIC_URL%/assets/js/libs/utils/html5shiv.js?1403934957"></script>
+		<script type="text/javascript" src="%PUBLIC_URL%/assets/js/libs/utils/respond.min.js?1403934956"></script>
+		<![endif]-->
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!--<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />-->
+    
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -26,7 +45,7 @@
     -->
     <title>React Redux App</title>
   </head>
-  <body>
+  <body class="menubar-hoverable header-fixed menubar-pin ">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -39,5 +58,30 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <!-- BEGIN JAVASCRIPT -->
+		<script src="%PUBLIC_URL%/assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/libs/bootstrap/bootstrap.min.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/libs/spin.js/spin.min.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/libs/autosize/jquery.autosize.min.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/core/source/App.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/core/source/AppNavigation.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/core/source/AppOffcanvas.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/core/source/AppCard.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/core/source/AppForm.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/core/source/AppNavSearch.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/core/source/AppVendor.js"></script>
+		<script src="%PUBLIC_URL%/assets/js/core/demo/Demo.js"></script>
+		<!-- END JAVASCRIPT -->
+
+    <!-- BEGIN JAVASCRIPT FOR TABLE DESIGN PAGES -->
+    <script src="%PUBLIC_URL%/assets/js/core/demo/DemoTableDynamic.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/libs/DataTables/jquery.dataTables.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/libs/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+    <!-- END JAVASCRIPT FOR TABLE DESIGN PAGES -->
+
   </body>
 </html>

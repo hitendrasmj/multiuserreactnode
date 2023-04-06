@@ -3,8 +3,8 @@ POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "Amit Kumar One",
-    "email": "admin.kumar.one@gmail.com",
+    "name": "Hitendra",
+    "email": "hitendra@gmail.com",
     "password": "123456",
     "confPassword": "123456",
     "role": "user"
@@ -41,7 +41,7 @@ POST  http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email": "hitendra@gmail.com",
+    "email": "admin@gmail.com",
     "password": "123456"
 }
 

@@ -1,17 +1,18 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Sidebar from '../components/Sidebar';
+import LeftSidebar from '../components/LeftSidebar';
+import RightSidebar from '../components/RightSidebar';
 
 const Layout = ({ children }) => {
     return (
         <React.Fragment>
-            <Navbar />
-            <div className="columns mt-6" style={{ minHeight: "100vh" }}>
-                <div className="columns is-2"><Sidebar /></div>
-                <div className="columns has-background-light">
-                    <main>{children}</main>
-                </div>
-            </div>
+        <Navbar/>
+        <div id="base"> 
+            <div className="offcanvas"></div>
+            {children}
+            <LeftSidebar/>
+            <RightSidebar/>
+        </div>    
         </React.Fragment>
     )
 }

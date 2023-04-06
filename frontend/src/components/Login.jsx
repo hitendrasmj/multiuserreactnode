@@ -25,37 +25,63 @@ const Login = () => {
   }
 
   return (
-    <section className="hero has-background-grey-light is-fullheight is-fullwidth">
-      <div className="hero-body">
-        <div className="container">
-          <div className="columns is-centered">
-            <div className="column is-4">
-                <form onSubmit={Auth} className='box'>
-                 {isError && <p className='has-text-centered'>{message}</p> }
-                <h1 className='title is-2'>Sign In</h1>    
-                    <div className="field">
-                        <label className="label">Email</label>
-                        <div className="control">
-                            <input type="text" className="input" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' />
-                        </div>
-                    </div>
-                    <div className="field">
-                        <label className="label">Password</label>
-                        <div className="control">
-                            <input type="password" className="input" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='***********' />
-                        </div>
-                    </div>
-                    <div className="field">
-                        <button type='submit' className="button is-success is-fullwidth">
-                          {isLoading ? 'Loading.....' : 'Login'}
-                        </button>
-                    </div>
-                </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section className="section-account">
+		<div className="img-backdrop" style={{ backgroundImage: "url(/assets/img/img16.jpg)" }}></div>
+		<div className="spacer"></div>
+		<div className="card contain-sm style-transparent">
+			<div className="card-body">
+				<div className="row">
+					<div className="col-sm-6">
+						<br/>
+						<span className="text-lg text-bold text-primary">MATERIAL ADMIN</span>
+						<br/><br/>
+						<form className="form floating-label" onSubmit={Auth} accept-charset="utf-8" method="post">
+						{isError && <p classNameName='has-text-centered'>{message}</p> }
+							<div className="form-group">
+								<input type="text" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} />
+								<label htmlFor="email">Email</label>
+							</div>
+							<div className="form-group">
+								<input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
+								<label htmlFor="password">Password</label>
+								<p className="help-block"><a href="#">Forgotten?</a></p>
+							</div>
+							<br/>
+							<div className="row">
+								<div className="col-xs-6 text-left">
+									<div className="checkbox checkbox-inline checkbox-styled">
+										<label>
+											<input type="checkbox" /> <span>Remember me</span>
+										</label>
+									</div>
+								</div> {/* end .col */}
+								<div className="col-xs-6 text-right">
+									<button className="btn btn-primary btn-raised" type="submit">{isLoading ? 'Loading.....' : 'Login'}</button>
+								</div>{/* end .col */}
+							</div>{/* end .row */}
+						</form>
+					</div>{/* end .col */}
+					<div className="col-sm-5 col-sm-offset-1 text-center">
+						<br/><br/>
+							<h3 className="text-light">
+								No account yet?
+							</h3>
+							<a className="btn btn-block btn-raised btn-primary" href="#">Sign up here</a>
+							<br/><br/>
+								<h3 className="text-light">
+									or
+								</h3>
+								<p>
+									<a href="#" className="btn btn-block btn-raised btn-info"><i className="fa fa-facebook pull-left"></i>Login with Facebook</a>
+								</p>
+								<p>
+									<a href="#" className="btn btn-block btn-raised btn-info"><i className="fa fa-twitter pull-left"></i>Login with Twitter</a>
+								</p>
+							</div>{/* end .col */}
+						</div>{/* end .row */}
+					</div>{/* end .card-body */}
+				</div>{/* end .card */}
+	</section>
   )
 }
 
