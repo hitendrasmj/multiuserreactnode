@@ -23,10 +23,10 @@ const ProductList = () => {
   return (
     <div id="content">
         <section>
-            <div className="section-body">
+            <div className="section-body contain-lg">
                 {/* BEGIN DEFAULT TABLE */}
                 <div className="row">
-                    <div className="col-md-12">
+                    <div className="col-lg-offset-1 col-md-8">
                         <div className="card">
                             <div className="card-head style-primary">
                                 <span className="col-sm-6"><header><strong>List of Products</strong></header></span>
@@ -45,13 +45,13 @@ const ProductList = () => {
                                     </thead>
                                     <tbody>
                                     {products.map((product, index) => (
-                                        <tr className="gradeX" key={product.uuid}>
+                                        <tr classNameName="gradeX" key={product.uuid}>
                                             <td>{index + 1}</td>
                                             <td>{product.name}</td>
                                             <td>{product.price}</td>
                                             <td>{product.user.name}</td>
                                             <td>
-                                                <Link className="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Edit row" to={`/products/edit/${product.uuid}`} className="button is-small is-info"><i className="fa fa-pencil"></i></Link>
+                                                <Link className="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Edit row" to={`/products/edit/${product.uuid}`} classNameName="button is-small is-info"><i className="fa fa-pencil"></i></Link>
                                                 
                                                 <button type="button" onClick={() => deleteProduct(product.uuid)} className="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i className="fa fa-trash-o"></i></button>
                                             </td>
