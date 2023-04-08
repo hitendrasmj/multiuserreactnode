@@ -51,7 +51,7 @@ POST  http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email": "hitendra.jsr.updated@gmail.com",
+    "email": "hitendra@gmail.com",
     "password": "123456"
 }
 
@@ -80,7 +80,7 @@ POST http://localhost:5000/products
 Content-Type: application/json
 
 {
-    "name": "Product 6",
+    "name": "Product 1",
     "price": 299
 }
 
@@ -97,3 +97,37 @@ Content-Type: application/json
 ###################################
 // Delete Product
 DELETE http://localhost:5000/products/65d89f7c-4e72-4b00-8229-b349e48324ab
+
+###################################
+// Create Category
+POST http://localhost:5000/category
+Content-Type: application/json
+
+{
+    "cate_name": "Category Two JSK",
+    "prnt_id": "1",
+    "status": "1"
+}
+
+##############################################
+// Get all categories
+GET http://localhost:5000/category
+
+##############################################
+//Get category by Id
+GET http://localhost:5000/category/59934de6-318d-4f8e-bd4d-9d9da5cd706c
+
+############################################
+//Update category
+PATCH http://localhost:5000/category/59934de6-318d-4f8e-bd4d-9d9da5cd706c
+Content-Type: application/json
+
+{
+    "cate_name": "Category Two JSK",
+    "prnt_id": "2",
+    "status": "2"
+}
+
+#############################################
+//Delete category
+DELETE http://localhost:5000/category/59934de6-318d-4f8e-bd4d-9d9da5cd706c
