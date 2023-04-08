@@ -104,7 +104,7 @@ POST http://localhost:5000/category
 Content-Type: application/json
 
 {
-    "cate_name": "Category Two JSK",
+    "cate_name": "Category Three JSK",
     "prnt_id": "1",
     "status": "1"
 }
