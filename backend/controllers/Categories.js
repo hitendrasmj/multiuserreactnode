@@ -141,3 +141,18 @@ export const deleteCategories = async(req, res) => {
         res.status(400).json({msg: error.message});
     }
 }
+
+export const getParentCateList = async(req, rep) => {
+    try {
+        let response = await Categories.findAll({
+            attributes: ['id', 'cate_name'],
+            include: [{
+                model:Categories,
+                where: {status: 1}
+            }]
+        });
+        res.status(200).json(response);
+    } catch (error) {   
+        
+    }
+}
