@@ -131,3 +131,7 @@ Content-Type: application/json
 #############################################
 //Delete category
 DELETE http://localhost:5000/category/59934de6-318d-4f8e-bd4d-9d9da5cd706c
+
+#############################################
+//Get Parent Category List
+GET http://localhost:5000/parentcatelist

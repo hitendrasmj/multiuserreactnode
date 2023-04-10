@@ -1,3 +1,4 @@
+import { response } from "express";
 import Categories from "../models/CategoriesModel.js";
 import Users from "../models/userModel.js";
 import { Op } from "sequelize";
@@ -142,17 +143,13 @@ export const deleteCategories = async(req, res) => {
     }
 }
 
-export const getParentCateList = async(req, rep) => {
+export const getParentCateList = async(req, res) => {
     try {
         let response = await Categories.findAll({
-            attributes: ['id', 'cate_name'],
-            include: [{
-                model:Categories,
-                where: {status: 1}
-            }]
+            attributes: ['id', 'cate_name']
         });
         res.status(200).json(response);
     } catch (error) {   
-        
+        res.status(400).json({msg: error.message});
     }
 }

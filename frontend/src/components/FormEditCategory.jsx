@@ -41,6 +41,19 @@ const FormEditCategory = () => {
             }
         }
     };
+
+    useEffect(()=>{
+        getParentCatList();       
+    },[]);
+
+    const getParentCatList = async() => {
+        const response = await axios.get("http://localhost:5000/parentcatelist");
+        setParentCatList(response.data);
+    }
+    
+    const [parentCatList, setParentCatList] = useState([]); 
+
+
   return (
     <div id="content">
         <section>
@@ -48,6 +61,7 @@ const FormEditCategory = () => {
                 {/* BEGIN VERTICAL FORM */}
                 <div className="row">
                     <div className="col-lg-offset-1 col-md-8">
+                        
                         <form className="form" onSubmit={updateCategory}>
                             <div className="card">
                                 <div className="card-head style-primary">
@@ -78,8 +92,9 @@ const FormEditCategory = () => {
                                         <div className="col-sm-6">
                                             <div className="form-group">
                                                 <select value={prnt_id} onChange={(e)=> setParentId(e.target.value)} className="form-control">
-                                                    <option value="1">Admin</option>
-                                                    <option value="2">Admin 2</option>
+                                                    {parentCatList.map((catList) => (
+                                                         <option value={catList.id}>{catList.cate_name}</option>
+                                                    ))}
                                                 </select>
                                                 <label htmlFor="Role">Parent Category</label>
                                             </div>

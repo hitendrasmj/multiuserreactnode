@@ -44,19 +44,25 @@ const CategoryList = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {categories.map((category, index) => (
-                                        <tr classNameName="gradeX" key={category.uuid}>
+                                    {categories.map((category, index) => {
+                                        let catStatus;
+                                        if(category.status == 1){
+                                            catStatus = "Activate"; 
+                                        } else {
+                                            catStatus = "Deactivate";
+                                        }
+                                        return <tr className="gradeX" key={category.uuid}>
                                             <td>{index + 1}</td>
                                             <td>{category.cate_name}</td>
-                                            <td>{category.status}</td>
+                                            <td>{catStatus}</td>
                                             <td>{category.user.name}</td>
                                             <td>
-                                                <Link className="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Edit row" to={`/category/edit/${category.uuid}`} classNameName="button is-small is-info"><i className="fa fa-pencil"></i></Link>
+                                                <Link className="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Edit row" to={`/category/edit/${category.uuid}`} className="button is-small is-info"><i className="fa fa-pencil"></i></Link>
                                                 
                                                 <button type="button" onClick={() => deleteCategory(category.uuid)} className="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i className="fa fa-trash-o"></i></button>
                                             </td>
                                         </tr>
-                                    ))}
+                                    })}
                                     </tbody>
                                 </table>
                             </div>{/*end .card-body */}
