@@ -54,6 +54,15 @@ const LeftSidebar = () => {
 
                 {/* BEGIN PRODUCTS */}
                 <li>
+                    <a href="/category" >
+                        <div className="gui-icon"><i className="md md-pages"></i></div>
+                        <span className="title">Category</span>
+                    </a>
+                </li>{/*end /menu-li */}
+                {/* END PRODUCTS */}
+
+                 {/* BEGIN PRODUCTS */}
+                 <li>
                     <a href="/products" >
                         <div className="gui-icon"><i className="md md-pages"></i></div>
                         <span className="title">Products</span>

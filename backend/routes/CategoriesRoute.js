@@ -1,13 +1,13 @@
 import express from "express";
 import { getCategories, getCategoriesById, createCategories, updateCategories, deleteCategories } from "../controllers/Categories.js";
-import { verifyUser, adminOnly } from "../middleware/AuthUser.js";
+import { verifyUser } from "../middleware/AuthUser.js";
 
 const router = express.Router();
 
-router.get('/category', verifyUser, adminOnly, getCategories);
-router.get('/category/:id', verifyUser, adminOnly, getCategoriesById);
-router.post('/category', verifyUser, adminOnly, createCategories);
-router.patch('/category/:id', verifyUser, adminOnly, updateCategories);
-router.delete('/category/:id', verifyUser, adminOnly, deleteCategories);
+router.get('/category', verifyUser, getCategories);
+router.get('/category/:id', verifyUser, getCategoriesById);
+router.post('/category', verifyUser, createCategories);
+router.patch('/category/:id', verifyUser, updateCategories);
+router.delete('/category/:id', verifyUser, deleteCategories);
 
 export default router;
