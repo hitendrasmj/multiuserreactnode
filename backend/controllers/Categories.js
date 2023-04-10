@@ -8,7 +8,7 @@ export const getCategories = async(req, res) => {
         let response;
         if(req.role=="admin"){
             response = await Categories.findAll({
-                attributes:['uuid', 'prnt_id', 'cate_name', 'status'],
+                attributes:['id', 'uuid', 'prnt_id', 'cate_name', 'status'],
                 include:[{
                     model: Users,
                     attributes: ['name', 'email']
@@ -16,7 +16,7 @@ export const getCategories = async(req, res) => {
             });
         } else {
             response = await Categories.findAll({
-                attributes:['uuid', 'prnt_id', 'cate_name', 'status'],
+                attributes:['id', 'uuid', 'prnt_id', 'cate_name', 'status'],
                 where: {
                     userId: req.userId
                 },
@@ -43,7 +43,7 @@ export const getCategoriesById = async(req, res) => {
         let response;
         if(req.role=="admin"){
             response = await Categories.findOne({
-                attributes: ['uuid', 'prnt_id', 'cate_name', 'status'],
+                attributes: ['id', 'uuid', 'prnt_id', 'cate_name', 'status'],
                 where:{
                     id: category.id
                 },
@@ -54,7 +54,7 @@ export const getCategoriesById = async(req, res) => {
             });
         } else {
             response = await Categories.findOne({
-                attributes: ['uuid', 'prnt_id', 'cate_name', 'status'],
+                attributes: ['id', 'uuid', 'prnt_id', 'cate_name', 'status'],
                 where:{
                     [Op.and]:[{id:category.id},{userId:req.userId}]
                 },

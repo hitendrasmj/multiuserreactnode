@@ -6,10 +6,11 @@ const FormEditCategory = () => {
     const [cate_name, setCateName] = useState("");
     const [status, setStatus] = useState("");
     const [prnt_id, setParentId] = useState("");
+    const [id_main, setIdMain] = useState("");
     const [msg, setMsg] = useState("");
     const navigate = useNavigate();
     const {id} = useParams();
-
+   
     useEffect(()=>{
         const getCategoryById = async () => {
             try {
@@ -17,6 +18,7 @@ const FormEditCategory = () => {
                 setCateName(response.data.cate_name);
                 setStatus(response.data.status);
                 setParentId(response.data.prnt_id);
+                setIdMain(response.data.id);
             } catch (error) {
                 if(error.response){
                     setMsg(error.response.data.msg);
@@ -92,9 +94,9 @@ const FormEditCategory = () => {
                                         <div className="col-sm-6">
                                             <div className="form-group">
                                                 <select value={prnt_id} onChange={(e)=> setParentId(e.target.value)} className="form-control">
-                                                    {parentCatList.map((catList) => (
+                                                    {parentCatList.map((catList) => {
                                                          <option value={catList.id}>{catList.cate_name}</option>
-                                                    ))}
+                                                    })}
                                                 </select>
                                                 <label htmlFor="Role">Parent Category</label>
                                             </div>
