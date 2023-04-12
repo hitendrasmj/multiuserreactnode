@@ -37,7 +37,6 @@ const FormAddCategory = () => {
 
     const [parentCatList, setParetCatList] = useState([]);
 
-
   return (
     <div id="content">
         <section>
