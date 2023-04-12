@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -25,6 +25,19 @@ const FormAddCategory = () => {
             
         }
     };
+
+    useEffect(()=>{
+        getParentCatList();
+    }, []);
+
+    const getParentCatList = async (req, res) =>{
+        const response = await axios.get('http://localhost:5000/parentcatelist');
+        setParetCatList(response.data);
+    }
+
+    const [parentCatList, setParetCatList] = useState([]);
+
+
   return (
     <div id="content">
         <section>
@@ -61,9 +74,10 @@ const FormAddCategory = () => {
                                     <div className="row">
                                         <div className="col-sm-6">
                                             <div className="form-group">
-                                                <select value={prnt_id} onChange={(e)=> setParentId(e.target.value)} className="form-control">
-                                                    <option value="1">Admin</option>
-                                                    <option value="2">Admin 2</option>
+                                                <select onChange={(e)=> setParentId(e.target.value)} className="form-control">
+                                                    {parentCatList.map((catPList) => (
+                                                        <option value={catPList.id}>{catPList.cate_name}</option>
+                                                    ))}
                                                 </select>
                                                 <label htmlFor="Role">Parent Category</label>
                                             </div>

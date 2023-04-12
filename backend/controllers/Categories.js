@@ -143,7 +143,7 @@ export const deleteCategories = async(req, res) => {
     }
 }
 
-export const getParentCateList = async(req, res) => {
+export const getParentCateList = async(req, res) => { 
     try {
         let response = await Categories.findAll({
             attributes: ['id', 'cate_name']
